@@ -6,8 +6,8 @@ pipeline {
      stages {
         stage('checkout') {
             steps {
-                sh 'rm -rf bus_booking'
-                sh 'git clone '
+                sh 'rm -rf weather-update'
+                sh 'git clone https://github.com/Soumya12346/weather-update.git'
             }
         }
 
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 script {
                     // Run the JAR file using java -jar
-                    sh "nohup timeout 10s java -jar target/${JAR_FILE} > output.log 2>&1 &"
+                    sh "nohup timeout 10s java -jar target/ > output.log 2>&1 &"
                     // Sleep for a while to allow the application to start (adjust as needed)
                     sleep 10
                 }
