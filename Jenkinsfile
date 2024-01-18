@@ -43,7 +43,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'ssh root@172.31.46.201'
-                sh "scp /home/slave/workspace/Bus_Booking/target/weather-forecast-app-1.0-SNAPSHOT.jar root@172.31.46.201:/opt/apache-tomcat-8.5.98/webapps/"
+                sh "scp /home/slave/workspace/Weather/target/weather-forecast-app-1.0-SNAPSHOT.jar root@172.31.46.201:/opt/apache-tomcat-8.5.98/webapps/"
             }
         }
         
